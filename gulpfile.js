@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
   sequence = require('gulp-sequence'),
   path = require('path'),
-  argv = require('yargs').argv,
+   argv = require('yargs').argv,
   prefix = require('gulp-prefix'),
   clean = require('gulp-clean'),
   browserSync = require('browser-sync'),

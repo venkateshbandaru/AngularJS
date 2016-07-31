@@ -51,6 +51,9 @@ fi;
 if [ ! -e ${modules_dir}/wget ]; then
     sudo puppet module install --force maestrodev/wget --target-dir ${modules_dir}
 fi;
+if [ ! -e ${modules_dir}/composer ]; then
+    sudo puppet module install --force willdurand/composer --target-dir ${modules_dir}
+fi;
 if [ ! -e ${modules_dir}/timezone ]; then
     sudo puppet module install --force saz-timezone --target-dir ${modules_dir}
 fi;
@@ -60,15 +63,15 @@ fi;
 if [ ! -e ${modules_dir}/accounts ]; then
     sudo puppet module install --force puppetlabs-accounts --target-dir ${modules_dir}
 fi;
-if [ ! -e ${modules_dir}/nginx ]; then
-    sudo puppet module install --force jfryman-nginx --target-dir ${modules_dir}
-fi;
-if [ ! -e ${modules_dir}/nodejs ]; then
-    sudo puppet module install --force puppet-nodejs --target-dir ${modules_dir}
-fi;
-if [ ! -e ${modules_dir}/git ]; then
-    sudo puppet module install --force puppetlabs-git --target-dir ${modules_dir}
-fi;
 
 sudo puppet apply --modulepath ${modules_dir} ${modules_dir}/../manifests/local/init.pp
 
+if [ ! -e ${modules_dir}/nginx ]; then
+    sudo puppet module install --force jfryman-nginx --target-dir ${modules_dir}
+fi;
+
+if [ ! -e ${modules_dir}/pear ]; then
+    sudo puppet module install --force rafaelfc-pear --target-dir ${modules_dir}
+fi;
+
+sudo puppet apply --modulepath ${modules_dir} ${modules_dir}/../manifests/local/general.pp
