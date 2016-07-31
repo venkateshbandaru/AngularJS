@@ -1,0 +1,38 @@
+.activate-message(ng-if="!user.active") Your account not activated. &#32;
+  a(ng-click="resendMail()") Activate now
+nav.navbar.navbar-static-top.navbar-default: .container-fluid
+  .navbar-header
+    button.navbar-toggle.collapsed(type='button',
+      data-toggle='collapse',
+      data-target='#navbar-menu',
+      aria-expanded='false'
+      )
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand(href='#')
+      .logo-img
+
+  #navbar-menu.collapse.navbar-collapse
+    ul.nav.navbar-nav
+      li.dropdown(uib-dropdown, ng-if="projects.length")
+        a.dropdown-toggle(role="button", uib-dropdown-toggle)
+          .text-overflow {{project.title}}
+          | &#32;
+          b.caret
+        ul.dropdown-menu
+          li(ng-repeat="item in projects", ng-class="{'active': project.id == item.id}")
+            a(ui-sref="tables-list", ng-click="selectProject(item)")
+              .text-overflow {{item.title}}
+          li.divider(role="separator")
+          li: a(project-add) + add new project
+    .navbar-form.navbar-left(ng-if="!projects.length")
+      button.btn.btn-primary(project-add) Create new project
+
+    ul.nav.navbar-nav.nav-main
+      li(ui-sref-active="active"): a(ui-sref="tables") Tables
+      li(ui-sref-active="active"): a(ui-sref="history", ng-if="project.hasUserAccess('decisions', 'view')") History
+      li(ui-sref-active="active"): a(ui-sref="settings") Settings
+      // li(ui-sref-active="active"): a(ui-sref="groups-list") Groups
+    include ./navbar-right-user

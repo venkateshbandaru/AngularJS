@@ -1,0 +1,31 @@
+form(ng-submit="submit(form)", name="form", novalidate)
+  .modal-header
+    h3.modal-title Add new project
+  .modal-body
+    .form-horizontal
+      .form-group(show-errors)
+        label.col-sm-2.control-label Title
+        .col-sm-10
+          input.form-control(
+          name="title",
+          type="text",
+          ng-model="model.title",
+          required,
+          placeholder="e.g. Credit scoring"
+          )
+          div.form-control-error(ng-messages="form.title.$error", ng-if="form.title.$dirty || form.$submitted")
+            div(ng-message="required") {{'validation.errors.new_project_title_empty'|translate}}
+      .form-group(show-errors)
+        label.col-sm-2.control-label Description
+        .col-sm-10
+          input.form-control(
+          name="description",
+          type="text",
+          ng-model="model.description",
+          placeholder="e.g. Tell a few words about the project"
+          )
+          div.form-control-error(ng-messages="form.description.$error", ng-if="form.description.$dirty || form.$submitted")
+            div(ng-message="required") {{'validation.errors.new_project_description_empty'|translate}}
+  .modal-footer
+    button.btn.btn-primary(type='submit') Save
+    button.btn.btn-warning(type='button', ng-click='cancel()') Cancel

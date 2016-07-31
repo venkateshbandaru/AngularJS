@@ -1,0 +1,113 @@
+.form-block
+  margin-top: 40px
+  &:first-child
+    margin-top: 0
+
+
+.form-block-heading
+  font-size: 16px
+  font-weight: bold
+  margin: 0 0 20px
+  padding: 0 10px
+
+.form-heading
+  font-size: 18px
+
+  font-weight: 400
+  margin-bottom: 25px
+
+.form-control-heading
+
+  color: #5b5b5b
+  font-size: 12px
+  font-weight: 400
+  text-transform: uppercase
+  margin-bottom: 15px
+
+.form-control-heading-small
+  color: #5b5b5b
+  font-size: 12px
+  font-weight: 400
+  text-transform: uppercase
+  //margin-bottom: 5px
+
+.form-control-block
+  padding-top: 7px
+
+.form-caption
+  font-size: 12px
+
+  .form-heading &
+    margin-top: 5px
+
+.form-control-underline
+
+  background-color: transparent
+  border: 0
+  border-bottom: 1px solid $input-group-addon-border-color
+  box-shadow: none !important
+  border-radius: 0
+  height: auto
+  padding-bottom: 15px
+  padding-left: 0
+
+  font-size: 14px
+  &[disabled]
+    background-color: inherit
+    opacity: .45
+
+  &[readonly]
+    background-color: inherit
+
+.form-control-underline-subtitle
+  text-align: right
+  padding-top: 6px
+  margin-bottom: -24px
+  display: block
+
+.form-control-underline-complexity
+  margin-top: -1px
+
+.form-control-underline-subtitle + .form-control-underline
+  padding-right: 40px
+
+.form-control-underline-small
+  font-size: 12px
+
+.form-control-error
+  color: $state-danger-text
+  font-size: 10px
+  margin-top: 5px
+  text-align: left
+
+.ng-submitted .form-control-error
+  display: block !important
+
+.form-control.ng-invalid.ng-dirty,
+.checkbox input.ng-invalid.ng-dirty,
+
+.ng-submitted .form-control.ng-invalid,
+.ng-submitted .checkbox input.ng-invalid
+
+  &:not(:focus)
+    border-color: $state-danger-text
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten($state-danger-text, 20%)
+
+.form-error
+  padding: 5px 10px
+  background-color: $alert-danger-bg
+  margin: 0 10px
+
+  display: inline-block
+
+.checkbox, .checkbox-inline
+  user-select: none
+  label, input
+    cursor: pointer
+
+// Override webkit input autocomplete styles
+input:-webkit-autofill
+  background-color: #fff !important
+  box-shadow: inset 0 0 0 50px #fff !important
+  -webkit-text-fill-color: #000 !important
+  transition: none

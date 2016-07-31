@@ -1,0 +1,50 @@
+.create-project
+  h4.create-project__header Create new project
+  .create-project__content
+    include:marked ../../content/guides/create-project.md
+  form(ng-submit="submit(form)", name="form", novalidate)
+    .form-group
+      input.form-control.form-control-underline(
+      name="title",
+      type="text",
+      ng-model="model.title",
+      required,
+      placeholder="Project title"
+      )
+    .form-group.text-right
+      input.form-control.form-control-underline(
+      name="description",
+      type="text",
+      ng-model="model.description",
+      placeholder="Project description"
+      )
+    .btn-actions.text-center
+      button.btn.btn-submit(type="submit") Create
+
+.row.hide: .col-md-8.col-md-push-2: form(novalidate, ng-submit="submit(form)", name="form")
+
+  ol.steps
+    li.steps-item
+      .steps-item-number 1.
+      | Create user
+    li.steps-item.active
+      .steps-item-number 2.
+      | Create project
+
+
+  .form-block
+
+    h2 Create new project
+    p Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore M
+    br
+
+    .form-group: input.form-control.form-control-underline.form-control-underline(ng-model="model.title", placeholder="Project name", required)
+    .form-group: input.form-control.form-control-underline.form-control-underline(ng-model="model.description", placeholder="Describe a project", required)
+
+  .form-block
+    h4.form-block-heading Invite collaborators (optional)
+
+    .form-group: input.form-control(ng-model="table.users")
+
+  .form-block
+    button.btn.btn-primary(type='submit') Submit

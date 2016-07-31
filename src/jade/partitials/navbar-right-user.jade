@@ -1,0 +1,20 @@
+ul.nav.navbar-nav.navbar-right
+  li.dropdown(uib-dropdown)
+    a.dropdown-toggle(role="button", uib-dropdown-toggle)
+      span.user-avatar
+        img(gravatar-src="user.email", gravatar-size="36")
+        span {{user.getName()}}
+      | &#32;
+      b.caret
+    ul.dropdown-menu
+      li.dropdown-header
+        b {{user.username}}
+        br
+        span {{user.email}}
+      li.divider(role="separator")
+      li: a(profile-edit="user") Edit profile
+      li.divider(role="separator")
+      li: a(change-password="user") Change password
+      li.divider(role="separator")
+      li
+        a(ng-click="logout()") Sign Out

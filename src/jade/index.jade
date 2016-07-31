@@ -1,0 +1,244 @@
+doctype html
+html(ng-app="app")
+  head(lang='en')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    title Gandalf - Open-Source Decision Engine for Big-Data
+    link(rel="icon", href="/images/favicon.ico?v=123123", type="image/x-icon")
+    link(rel="shortcut icon", href="/images/favicon.ico?v=123123", type="image/x-icon")
+    link(rel='stylesheet', href='css/app.css')
+    link(rel='stylesheet', href='bower_components/highlightjs/styles/github.css')
+    link(rel='stylesheet', href='bower_components/angular-loading-bar/build/loading-bar.css')
+    link(rel='stylesheet', href='bower_components/angular-toastr/dist/angular-toastr.css')
+
+  body.app
+    div(ui-view='')
+
+    // build:js js/app.min.js
+    script(src='bower_components/jquery/dist/jquery.js')
+    script(src='bower_components/jquery-ui/jquery-ui.js')
+
+    script(src='bower_components/bootstrap-sass/assets/javascripts/bootstrap.js')
+
+    script(src='bower_components/angular/angular.js')
+
+    script(src='bower_components/angular-ui-router/release/angular-ui-router.js')
+    script(src='bower_components/angular-ui-router-default/angular-ui-router-default.js')
+
+    script(src='bower_components/angular-sanitize/angular-sanitize.js')
+
+    script(src='bower_components/ui-router-extras/release/ct-ui-router-extras.js')
+
+    script(src='bower_components/angular-drag-columns/src/angular-drag-columns.js')
+    script(src='bower_components/angular-table-fixed-rows/src/angular-table-fixed-rows.js')
+
+    script(src='bower_components/bugsnag/src/bugsnag.js', data-inlinescript="false")
+    script(src='bower_components/angular-bugsnag/dist/angular-bugsnag.js')
+
+    script(src='bower_components/ngstorage/ngStorage.js')
+
+    script(src='bower_components/angular-bootstrap/ui-bootstrap.js')
+    script(src='bower_components/angular-bootstrap/ui-bootstrap-tpls.js')
+
+    script(src='bower_components/angular-messages/angular-messages.js')
+
+    script(src='bower_components/angular-ui-sortable/sortable.js')
+
+    script(src='bower_components/angular-loading-bar/build/loading-bar.js')
+
+    script(src='bower_components/lodash/lodash.js')
+
+    script(src='bower_components/highlightjs/highlight.pack.js')
+
+    script(src='bower_components/angular-highlightjs/angular-highlightjs.js')
+
+    script(src='bower_components/checklist-model/checklist-model.js')
+
+    script(src='bower_components/nebo-angular-validate/nebo-angular-validate.js')
+
+    script(src='bower_components/angular-translate/angular-translate.js')
+    script(src='bower_components/angular-gravatar/build/angular-gravatar.js')
+    script(src='bower_components/zxcvbn/dist/zxcvbn.js')
+
+    script(src='bower_components/angular-toastr/dist/angular-toastr.tpls.js')
+
+    script(src='js/config.js')
+
+    script(src='js/modules/gandalf/gandalf.js')
+
+    script(src='js/modules/gandalf/models/field.js')
+
+    script(src='js/modules/gandalf/models/rule.js')
+    script(src='js/modules/gandalf/models/rule-condition.js')
+
+    script(src='js/modules/gandalf/models/variant.js')
+
+    script(src='js/modules/gandalf/models/table.js')
+
+    script(src='js/modules/gandalf/models/table-changelog.js')
+
+    script(src='js/modules/gandalf/models/diff-table.js')
+
+    script(src='js/modules/gandalf/models/analytics-table.js')
+    script(src='js/modules/gandalf/models/analytics-variant.js')
+    script(src='js/modules/gandalf/models/analytics-rule.js')
+    script(src='js/modules/gandalf/models/analytics-rule-condition.js')
+
+    script(src='js/modules/gandalf/models/history-table.js')
+    script(src='js/modules/gandalf/models/history-rule.js')
+    script(src='js/modules/gandalf/models/history-rule-condition.js')
+
+    script(src='js/modules/gandalf/models/group.js')
+
+    script(src='js/modules/gandalf/models/project.js')
+    script(src='js/modules/gandalf/models/project-user.js')
+    script(src='js/modules/gandalf/models/project-consumer.js')
+
+    script(src='js/modules/gandalf/models/user.js')
+
+    script(src='js/modules/gandalf/constants/transforms.js')
+
+    script(src='js/modules/gandalf/services/gandalf.js')
+    script(src='js/modules/gandalf/services/utils.js')
+
+    script(src='js/modules/conditions.js')
+    script(src='js/modules/ng-equal.js')
+
+    script(src='js/modules/lodash.js')
+    script(src='js/modules/uib-modal-confirm.js')
+
+    script(src='js/app.js')
+
+    script(src='js/configs/auth.js')
+    script(src='js/configs/validate.js')
+
+    script(src='js/configs/bugsnag.js')
+    script(src='js/configs/toastr.js')
+
+    script(src='js/configs/language.js')
+
+    script(src='js/configs/api.js')
+    script(src='js/configs/states.js')
+    script(src='js/configs/states/settings.js')
+    script(src='js/configs/states/groups.js')
+    script(src='js/configs/states/tables.js')
+    script(src='js/configs/states/history.js')
+
+    script(src='js/configs/states/welcome.js')
+
+
+    script(src='js/constants/scopes.js')
+
+    script(src='js/directives/bigger-then.js')
+
+    script(src='js/directives/validation-popover.js')
+
+    script(src='js/directives/boolean-select.js')
+    script(src='js/directives/green-red-gradient.js')
+
+    script(src='js/directives/condition-input.js')
+    script(src='js/directives/doubled-input.js')
+
+    script(src='js/directives/skip-form.js')
+
+    script(src='js/directives/field.js')
+    script(src='js/directives/field-static.js')
+
+    script(src='js/directives/show-errors.js')
+    script(src='js/directives/stop-propagation.js')
+
+    script(src='js/directives/archive-values.js')
+    script(src='js/directives/complexity.js')
+
+    script(src='js/directives/has-access.js')
+
+    script(src='js/directives/validation-focus.js')
+
+    script(src='js/directives/components/select-matching-type.js')
+    script(src='js/directives/components/select-decision-type.js')
+
+    script(src='js/directives/components/decision-input.js')
+    script(src='js/directives/components/decision-table.js')
+    script(src='js/directives/components/decision-rule-title-description.js')
+    script(src='js/directives/components/decision-rule-decision.js')
+
+    script(src='js/directives/components/add-new-field.js')
+
+    script(src='js/directives/components/project-add.js')
+    script(src='js/directives/components/project-edit.js')
+    script(src='js/directives/components/project-delete.js')
+
+    script(src='js/directives/components/user-edit.js')
+    script(src='js/directives/components/user-add.js')
+
+    script(src='js/directives/components/consumer-add.js')
+    script(src='js/directives/components/consumer-edit.js')
+
+    script(src='js/directives/components/group-edit.js')
+    script(src='js/directives/components/group-delete.js')
+
+    script(src='js/directives/components/group-table-add.js')
+
+    script(src='js/directives/components/user-scope-list.js')
+
+    script(src='js/directives/components/profile-edit.js')
+    script(src='js/directives/components/change-password.js')
+
+    script(src='js/filters/json.js')
+    script(src='js/filters/to-fixed.js')
+    script(src='js/filters/no-empty.js')
+    script(src='js/filters/sample-curl.js')
+    script(src='js/filters/last.js')
+    script(src='js/filters/join.js')
+    script(src='js/filters/map.js')
+    script(src='js/filters/translate-array.js')
+    script(src='js/filters/max-length.js')
+    script(src='js/filters/boolean.js')
+
+    script(src='js/services/auth.js')
+    script(src='js/services/projects.js')
+    script(src='js/services/utils.js')
+    script(src='js/services/user.js')
+
+    script(src='js/controllers/app-controller.js')
+
+    script(src='js/controllers/welcome/welcome-controller.js')
+    script(src='js/controllers/welcome/welcome-project-add-controller.js')
+
+    script(src='js/controllers/auth/sign-in-controller.js')
+    script(src='js/controllers/auth/sign-up-controller.js')
+    script(src='js/controllers/auth/reset-password-controller.js')
+    script(src='js/controllers/auth/reset-password-confirm-controller.js')
+    script(src='js/controllers/auth/activate-controller.js')
+
+    script(src='js/controllers/add-field-controller.js')
+    script(src='js/controllers/revert-field-controller.js')
+
+    script(src='js/controllers/debugger-details-controller.js')
+
+    script(src='js/controllers/delete-table-controller.js')
+    script(src='js/controllers/edit-table-name-controller.js')
+
+    script(src='js/controllers/tables-create-controller.js')
+
+    script(src='js/controllers/tables-details-controller.js')
+
+    script(src='js/controllers/tables-info-controller.js')
+    script(src='js/controllers/tables-edit-controller.js')
+    script(src='js/controllers/tables-list-controller.js')
+    script(src='js/controllers/tables-diff-controller.js')
+    script(src='js/controllers/tables-revisions-controller.js')
+
+    script(src='js/controllers/tables-analytics-controller.js')
+
+    script(src='js/controllers/groups-list-controller.js')
+    script(src='js/controllers/group-create-controller.js')
+    script(src='js/controllers/groups-details-controller.js')
+
+    script(src='js/controllers/history-details-controller.js')
+    script(src='js/controllers/history-list-controller.js')
+
+    script(src='js/controllers/projects/project-add-controller.js')
+
+    script(src='js/controllers/settings/settings-project-controller.js')
+    // endbuild

@@ -1,0 +1,69 @@
+.container-fluid
+  .row
+    .col-md-12
+      .block
+        .text-heading
+          .text-heading-label Name
+          .text-overflow {{project.title}}
+        .text-heading(ng-if="project.description")
+          .text-heading-label Description
+          | {{project.description}}
+        .text-heading
+          .text-heading-label Application ID
+          | {{project.id}}
+        .row
+          .col-md-3
+            .text-heading
+              .text-heading-label Returns Decision Flow
+              | {{project.settings.show_meta | boolean: 'Yes' : 'No'}}
+          .col-md-3
+            .text-heading
+              .text-heading-label Active account
+              | {{user.active | boolean: 'Yes' : 'No'}}
+
+        .btn-actions(ng-if="project.hasUserAccess('project', 'update')"): .btn-group.btn-group-sm
+          a.btn.btn-primary(project-edit="project") Edit
+
+.block.container-fluid
+  .row
+    .col-md-4.col-md-push-6
+      include:marked ../../content/guides/settings-project-users.md
+    .col-md-6.col-md-pull-4
+      .panel.panel-default
+        .panel-heading Collaborators
+        .panel-body
+          div.list-group.list-group-panel
+            div(has-access="users.manage" project="project")
+              a.list-group-item(ng-repeat="user in project.users", user-edit="project" user-edit-model="user") {{user.username}}
+                br
+                span.small.subtitle {{user.scope | translateArray: 'scopes.users.':'.details' | join: ', '}}
+            a.list-group-item(user-add="project", ng-if="project.hasUserAccess('users', 'manage')")
+              b.text-primary + add collaborator
+
+   .row(ng-if="project.consumers")
+    .col-md-4.col-md-push-6
+      include:marked ../../content/guides/settings-project-consumers.md
+    .col-md-6.col-md-pull-4
+      .panel.panel-default
+        .panel-heading API Consumers Credentials
+        .panel-body
+          .list-group.list-group-panel
+            a.list-group-item(ng-repeat="consumer in project.consumers", consumer-edit="project", consumer-edit-model="consumer")
+              .text-overflow.max-width {{consumer.description}}
+            a.list-group-item(consumer-add="project", ng-if="project.hasUserAccess('consumers', 'manage')"): b.text-primary + create consumer
+  p: br
+  .row
+    .col-md-3.pull-left
+      button.btn.btn-danger(project-delete="project", ng-if="project.hasUserAccess('project', 'delete')") Delete project
+    .col-md-3.text-right
+      button.btn.btn-success.btn-loading(ng-if="!exportDownload", ng-click="export()", ng-class="{'is-active': isExportLoading}")
+        .btn-loader: .glyphicon.glyphicon-refresh
+        | Export your data
+      button.btn.btn-default(disabled, ng-if="exportDownload")
+        i.glyphicon.glyphicon-check.btn-glyphicon
+        | Export done
+
+
+  p: br
+
+

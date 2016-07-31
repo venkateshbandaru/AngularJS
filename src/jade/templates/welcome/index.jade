@@ -1,0 +1,8 @@
+.welcome
+  h4.welcome__header Welcome to Gandalf
+  .welcome__content
+    include:marked ../../content/welcome.md
+  .welcome__content(ng-if="!user.active")
+    include:marked ../../content/activate.md
+  p.btn-actions
+    a.btn.btn-submit(ui-sref="welcome-project-add") Continue
